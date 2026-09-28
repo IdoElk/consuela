@@ -15,6 +15,8 @@ build-backend = "hatchling.build"
 dev = [
     "pytest>=8.4,<9",
     "ruff>=0.14,<1",
+    "complexipy>=5,<6",
+    "pre-commit>=4,<5",
 ]
 
 [tool.ruff]
@@ -22,6 +24,9 @@ line-length = 120
 
 [tool.ruff.lint]
 select = ["E", "F", "I"]
+
+[tool.complexipy]
+max-complexity-allowed = 15
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

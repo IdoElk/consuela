@@ -1,0 +1,21 @@
+repos:
+  - repo: local
+    hooks:
+      - id: ruff
+        name: Ruff
+        entry: uv run --frozen ruff check
+        language: system
+        types: [python]
+
+      - id: ruff-format
+        name: Ruff format
+        entry: uv run --frozen ruff format
+        language: system
+        types: [python]
+
+      - id: complexipy
+        name: Cognitive complexity
+        entry: uv run --frozen complexipy
+        language: system
+        types: [python]
+        require_serial: true
