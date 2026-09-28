@@ -1,0 +1,7 @@
+- id: consuela
+  name: Consuela file audit
+  description: Audit each supplied Python file with Jev (requires TYPESAFE_API_KEY).
+  entry: consuela
+  language: python
+  types: [python]
+  require_serial: true

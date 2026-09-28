@@ -55,7 +55,21 @@ uv run pre-commit install
 uv run pre-commit run --all-files
 ```
 
-They run Ruff (lint and format) and Complexipy with a per-function ceiling of 15.
+They run Ruff (lint and format) and Complexipy with a per-function ceiling of 15. The hook manifest also exposes `consuela` for consumers who explicitly want paid file audits. For a local checkout, an opt-in consumer configuration is:
+
+```yaml
+repos:
+  - repo: local
+    hooks:
+      - id: consuela
+        name: Consuela file audit
+        entry: consuela
+        language: system
+        types: [python]
+        require_serial: true
+```
+
+Install the CLI first and supply the consumer's environment/`.env`. Pre-commit passes selected filenames; each gets a complete file audit.
 
 ## Development
 
